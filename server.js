@@ -6,13 +6,15 @@ console.log("process.env.OPENSHIFT_NODEJS_IP : "+process.env.OPENSHIFT_NODEJS_IP
 console.log("process.env.OPENSHIFT_NODEJS_PORT : "+process.env.OPENSHIFT_NODEJS_PORT );
 var server_port = process.env.OPENSHIFT_NODEJS_PORT ||  process.env.OPENSHIFT_INTERNAL_PORT || process.env.PORT || 8080;
 var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || process.env.OPENSHIFT_INTERNAL_IP ||process.env.IP|| '127.0.0.1';
+var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080,
+    ip   = process.env.IP   || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
 server.connection({
-	host: server_ip_address,
-	port: server_port
+	host: ip,
+	port: port
 });
 console.log("IP :"+server_ip_address);
 console.log("port :"+server_port);
-debugger;
+console.log('Server running on http://%s:%s', ip, port);
 server.register([require('inert'), require('hapi-error')], function () {
 
 	server.route([
