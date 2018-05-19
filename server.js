@@ -1,4 +1,3 @@
-npm install --save hapi;
 var Hapi = require('hapi');
 var server = new Hapi.Server();
 
