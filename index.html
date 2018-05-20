@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Chat</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/bootstrap.min.css">
+    <link rel="icon"
+      type="image/png"
+      href="https://i.imgur.com/84ZFT7V.png">
+  </head>
+  <body>
+    <div class="header clearfix">
+    <h1>Marathi Chatty</h1>
+  </div>
+    <div id="welcome">
+
+      <div class="container center welcomeData">
+
+        <h2>Marathi Chatty(MC) is a great way to meet new friends.</h2>
+            <div class="left">When you use MC,
+        we pick someone else at random and let you talk one-on-one.
+        To help you stay safe, chats are anonymous unless you tell someone who you are (not suggested!),
+        and you can stop a chat at any time.
+        Predators have been known to use MC, so please be careful from those BC's.
+</div>
+<button class="btn btn-lg btn-success" id="chalu">Start</button>
+<div>By using MC, you accept the terms at the bottom. You must be 18+ or 13+ with parental permission.</div>
+      </div>
+    </div>
+    <div style="display:none;" id="mainChat">
+      <div class="messages">
+        <div class="container">
+    <h2 id='joiners'> <i id='joined'>You </i> joined the chat!</h2>
+
+    <ul id="messages"></ul>
+  </div>
+</div>
+
+<div class="container">
+<form action="" class="row form-group">
+      <button type="reset" id="c" class="col-sm-2 form-control" disabled onclick="return cancelChat()">Cancel</button>
+      <input id="m" autocomplete="off" class="col-sm-8 form-control" disabled placeholder="Waiting For MCian to Join..."/>
+      <button id="s" class="col-sm-2 form-control" disabled>Send</button>
+    </form>
+  </div>
+</div>
+    <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
+    <script src="https://cdn.rawgit.com/ScottHamper/Cookies/1.2.1/dist/cookies.min.js">
+    </script>
+    <script src="https://cdn.socket.io/socket.io-1.3.5.js"></script>
+    <script src="/client.js"></script>
+  </body>
+</html>
